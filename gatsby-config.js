@@ -20,6 +20,19 @@ module.exports = {
       },
       resolve: `gatsby-plugin-manifest`,
     },
+    {
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Lato",
+              variants: ["300", "400", "500", "700"],
+            },
+          ],
+        },
+      },
+      resolve: `gatsby-plugin-webfonts`,
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-material-ui`,
     `gatsby-transformer-sharp`,
