@@ -66,8 +66,6 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-      "git-branch-is --not main",
-      "git-branch-is --not develop",
       "eslint --fix"
     ]
   },
