@@ -2,6 +2,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import React, { FC } from "react";
 
+import Header from "./header";
+
 const theme = createMuiTheme({
   palette: {
     background: {
@@ -17,6 +19,14 @@ const theme = createMuiTheme({
     },
   },
   typography: {
+    body1: {
+      fontWeight: 500,
+    },
+    button: {
+      fontSize: "1rem",
+      fontWeight: 700,
+      textTransform: "none",
+    },
     fontFamily: "Lato",
     h1: {
       fontWeight: 700,
@@ -43,6 +53,7 @@ const Layout: FC = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Header />
       {children}
     </ThemeProvider>
   );
