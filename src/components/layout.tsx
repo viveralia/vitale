@@ -27,6 +27,9 @@ const theme = createMuiTheme({
       fontWeight: 700,
       textTransform: "none",
     },
+    caption: {
+      lineHeight: "1.3",
+    },
     fontFamily: "Lato",
     h1: {
       fontWeight: 700,

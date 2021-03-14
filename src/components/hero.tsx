@@ -16,14 +16,16 @@ const useStyles = makeStyles(theme => ({
     color: "#FFFFFF",
     fontSize: "1.25rem",
     margin: "1.2rem 0",
-    padding: "0.57rem 3.66rem",
+    maxWidth: "236px",
+    padding: "0.57rem 3rem",
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
   buttonMobile: {
     color: "#FFFFFF",
-    margin: "1rem",
+    margin: "1.2rem",
+    maxWidth: "193px",
     padding: "0.5rem 2.5rem",
     [theme.breakpoints.up("md")]: {
       display: "none",
@@ -32,12 +34,13 @@ const useStyles = makeStyles(theme => ({
   captionMd: {
     fontSize: "0.875rem",
     fontWeight: 500,
-    maxWidth: "380",
+    width: "350px",
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
   captionMobile: {
+    maxWidth: "262px",
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
@@ -69,7 +72,7 @@ const useStyles = makeStyles(theme => ({
   numberSavingsMd: {
     fontSize: "2rem",
     paddingBottom: "0.3rem",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
@@ -92,7 +95,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
   sliderMobile: {
-    maxWidth: "300px",
+    padding: "1.8rem 0",
+    width: "80%",
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
@@ -110,7 +114,7 @@ const useStyles = makeStyles(theme => ({
   textSavingsMd: {
     fontSize: "2rem",
     fontWeight: 500,
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
@@ -182,7 +186,7 @@ const Hero: FC = () => {
         spacing={3}
         className={classes.containerStyle}
       >
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={7} container direction="column">
           <Typography variant="h5" component="h1" className={classes.title}>
             Agua a tu alcance
           </Typography>
@@ -194,7 +198,7 @@ const Hero: FC = () => {
             Soluciones de almacenamiento de agua, al mejor precio.
           </Typography>
           <Typography color="textSecondary" className={classes.discoverMd}>
-            Descubre cuánto podrías ahorrar con Vitale.
+            Descubre cuánto podrías ahorrar eligiendo Vitale.
           </Typography>
           <SavingSlider
             className={classes.sliderMd}
@@ -249,7 +253,7 @@ const Hero: FC = () => {
           />
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} container direction="column" alignItems="center">
           <Typography className={classes.discoverMobile}>
             Descubre cuánto podrías ahorrar con Vitale.
           </Typography>
@@ -257,8 +261,6 @@ const Hero: FC = () => {
           <Typography color="textSecondary" className={classes.question}>
             Solo cuéntanos, ¿cuántos tinacos necesitas?
           </Typography>
-        </Grid>
-        <Grid item xs={12}>
           <SavingSlider
             className={classes.sliderMobile}
             value={product}
@@ -295,15 +297,15 @@ const Hero: FC = () => {
             *aproximadamente en comparación al tinaco promedio de 1,100 lts en
             el mercado mexicano
           </Typography>
+          <Button
+            color="primary"
+            variant="contained"
+            size="large"
+            className={classes.buttonMobile}
+          >
+            Cotizar ahora
+          </Button>
         </Grid>
-        <Button
-          color="primary"
-          variant="contained"
-          size="large"
-          className={classes.buttonMobile}
-        >
-          Cotizar ahora
-        </Button>
       </Grid>
     </Container>
   );
