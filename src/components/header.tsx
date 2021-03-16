@@ -1,7 +1,7 @@
 import { Container, makeStyles } from "@material-ui/core";
 import React, { FC } from "react";
 
-import vitaleLogo from "../images/vitale_logo.png";
+import vitaleLogo from "../assets/images/vitale_logo.png";
 
 const useStyles = makeStyles(theme => ({
   headerStyles: {

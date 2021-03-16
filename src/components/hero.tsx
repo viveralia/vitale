@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import React, { FC, useState } from "react";
 
-import tinaco from "../images/tinaco_vitale.png";
+import tinaco from "../assets/images/tinaco_vitale.png";
 
 const useStyles = makeStyles(theme => ({
   buttonMd: {
