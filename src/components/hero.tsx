@@ -68,6 +68,9 @@ const useStyles = makeStyles(theme => ({
   },
   imageStyle: {
     width: "100%",
+    [theme.breakpoints.only("sm")]: {
+      width: "70%",
+    },
   },
   numberSavingsMd: {
     fontSize: "2rem",

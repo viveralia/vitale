@@ -35,6 +35,9 @@ const featurelist = [
 ];
 
 const useStyles = makeStyles(theme => ({
+  colorContainer: {
+    backgroundColor: "rgba(34, 60, 83, 0.025);",
+  },
   gridStyle: {
     padding: "1rem 1.5rem",
     [theme.breakpoints.up("lg")]: {
@@ -42,9 +45,12 @@ const useStyles = makeStyles(theme => ({
     },
   },
   sectionStyle: {
-    backgroundColor: "rgba(34, 60, 83, 0.025);",
-    paddingBottom: "0.2rem",
-    paddingTop: "0.2rem",
+    paddingBottom: "1rem",
+    paddingTop: "1rem",
+    [theme.breakpoints.up("md")]: {
+      paddingBottom: "3.5rem",
+      paddingTop: "3.5rem",
+    },
   },
 }));
 
@@ -52,20 +58,22 @@ const FeatureList: FC = () => {
   const classes = useStyles();
 
   return (
-    <Container component="section" className={classes.sectionStyle}>
-      <Grid container spacing={3} className={classes.gridStyle}>
-        {featurelist.map((feature, index) => {
-          return (
-            <Feature
-              key={index}
-              title={feature.title}
-              content={feature.content}
-              Icon={feature.image}
-            />
-          );
-        })}
-      </Grid>
-    </Container>
+    <div className={classes.colorContainer}>
+      <Container component="section" className={classes.sectionStyle}>
+        <Grid container spacing={3} className={classes.gridStyle}>
+          {featurelist.map((feature, index) => {
+            return (
+              <Feature
+                key={index}
+                title={feature.title}
+                content={feature.content}
+                Icon={feature.image}
+              />
+            );
+          })}
+        </Grid>
+      </Container>
+    </div>
   );
 };
 

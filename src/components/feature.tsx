@@ -9,7 +9,7 @@ interface FeatureProps {
 
 const useStyles = makeStyles(() => ({
   gridStyle: {
-    margin: "0.2rem 0",
+    margin: "0.3rem 0",
   },
   imageStyle: {
     height: "38px",
@@ -35,7 +35,3 @@ const Feature: FC<FeatureProps> = ({ content, Icon, title }) => {
 };
 
 export default Feature;
-
-{
-  /* <img className={classes.imageStyle} src={image} alt={alt} /> */
-}
