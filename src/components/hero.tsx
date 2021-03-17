@@ -45,8 +45,10 @@ const useStyles = makeStyles(theme => ({
       display: "none",
     },
   },
+  colorContainer: {
+    backgroundColor: theme.palette.background.paper,
+  },
   containerStyle: {
-    padding: "1rem 1.5rem",
     textAlign: "center",
     [theme.breakpoints.up("md")]: {
       justifyContent: "left",
@@ -182,135 +184,137 @@ const Hero: FC = () => {
   };
 
   return (
-    <Container component="section">
-      <Grid
-        container
-        justify="center"
-        spacing={3}
-        className={classes.containerStyle}
-      >
-        <Grid item xs={12} md={7} container direction="column">
-          <Typography variant="h5" component="h1" className={classes.title}>
-            Agua a tu alcance
-          </Typography>
-          <Typography
-            variant="body1"
-            color="textSecondary"
-            className={classes.subtitleStyle}
-          >
-            Soluciones de almacenamiento de agua, al mejor precio.
-          </Typography>
-          <Typography color="textSecondary" className={classes.discoverMd}>
-            Descubre cuánto podrías ahorrar eligiendo Vitale.
-          </Typography>
-          <SavingSlider
-            className={classes.sliderMd}
-            value={product}
-            onChange={handleSlider}
-            max={1000}
-            min={30}
-          />
-          <Typography variant="h5" className={classes.numberSavingsMd}>
-            {product}{" "}
-            <Typography
-              variant="h5"
-              color="textSecondary"
-              component="span"
-              className={classes.textSavingsMd}
-            >
-              tinacos ={" "}
+    <div className={classes.colorContainer}>
+      <Container component="section">
+        <Grid
+          container
+          justify="center"
+          spacing={3}
+          className={classes.containerStyle}
+        >
+          <Grid item xs={12} md={7} container direction="column">
+            <Typography variant="h5" component="h1" className={classes.title}>
+              Agua a tu alcance
             </Typography>
-            ${calculateSavings(product)}{" "}
             <Typography
-              variant="h5"
+              variant="body1"
               color="textSecondary"
-              component="span"
-              className={classes.textSavingsMd}
+              className={classes.subtitleStyle}
             >
-              ahorro*
+              Soluciones de almacenamiento de agua, al mejor precio.
             </Typography>
-          </Typography>
-          <Typography
-            variant="caption"
-            color="textSecondary"
-            className={classes.captionMd}
-          >
-            *aproximadamente en comparación al tinaco promedio de 1,100 lts en
-            el mercado mexicano
-          </Typography>
-          <Button
-            color="primary"
-            variant="contained"
-            size="large"
-            className={classes.buttonMd}
-          >
-            Cotizar ahora
-          </Button>
+            <Typography color="textSecondary" className={classes.discoverMd}>
+              Descubre cuánto podrías ahorrar eligiendo Vitale.
+            </Typography>
+            <SavingSlider
+              className={classes.sliderMd}
+              value={product}
+              onChange={handleSlider}
+              max={1000}
+              min={30}
+            />
+            <Typography variant="h5" className={classes.numberSavingsMd}>
+              {product}{" "}
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                component="span"
+                className={classes.textSavingsMd}
+              >
+                tinacos ={" "}
+              </Typography>
+              ${calculateSavings(product)}{" "}
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                component="span"
+                className={classes.textSavingsMd}
+              >
+                ahorro*
+              </Typography>
+            </Typography>
+            <Typography
+              variant="caption"
+              color="textSecondary"
+              className={classes.captionMd}
+            >
+              *aproximadamente en comparación al tinaco promedio de 1,100 lts en
+              el mercado mexicano
+            </Typography>
+            <Button
+              color="primary"
+              variant="contained"
+              size="large"
+              className={classes.buttonMd}
+            >
+              Cotizar ahora
+            </Button>
+          </Grid>
+
+          <Grid item xs={12} md={5}>
+            <img
+              src={tinaco}
+              alt="tinaco vitale"
+              className={classes.imageStyle}
+            />
+          </Grid>
+
+          <Grid item xs={12} container direction="column" alignItems="center">
+            <Typography className={classes.discoverMobile}>
+              Descubre cuánto podrías ahorrar con Vitale.
+            </Typography>
+
+            <Typography color="textSecondary" className={classes.question}>
+              Solo cuéntanos, ¿cuántos tinacos necesitas?
+            </Typography>
+            <SavingSlider
+              className={classes.sliderMobile}
+              value={product}
+              onChange={handleSlider}
+              min={30}
+              max={1000}
+            />
+
+            <Typography variant="h5" className={classes.numberSavingsMobile}>
+              {product}{" "}
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                component="span"
+                className={classes.textSavingsMobile}
+              >
+                tinacos ={" "}
+              </Typography>
+              ${calculateSavings(product)}{" "}
+              <Typography
+                variant="h5"
+                color="textSecondary"
+                component="span"
+                className={classes.textSavingsMobile}
+              >
+                ahorro*
+              </Typography>
+            </Typography>
+            <Typography
+              variant="caption"
+              color="textSecondary"
+              className={classes.captionMobile}
+            >
+              *aproximadamente en comparación al tinaco promedio de 1,100 lts en
+              el mercado mexicano
+            </Typography>
+            <Button
+              color="primary"
+              variant="contained"
+              size="large"
+              className={classes.buttonMobile}
+            >
+              Cotizar ahora
+            </Button>
+          </Grid>
         </Grid>
-
-        <Grid item xs={12} md={5}>
-          <img
-            src={tinaco}
-            alt="tinaco vitale"
-            className={classes.imageStyle}
-          />
-        </Grid>
-
-        <Grid item xs={12} container direction="column" alignItems="center">
-          <Typography className={classes.discoverMobile}>
-            Descubre cuánto podrías ahorrar con Vitale.
-          </Typography>
-
-          <Typography color="textSecondary" className={classes.question}>
-            Solo cuéntanos, ¿cuántos tinacos necesitas?
-          </Typography>
-          <SavingSlider
-            className={classes.sliderMobile}
-            value={product}
-            onChange={handleSlider}
-            min={30}
-            max={1000}
-          />
-
-          <Typography variant="h5" className={classes.numberSavingsMobile}>
-            {product}{" "}
-            <Typography
-              variant="h5"
-              color="textSecondary"
-              component="span"
-              className={classes.textSavingsMobile}
-            >
-              tinacos ={" "}
-            </Typography>
-            ${calculateSavings(product)}{" "}
-            <Typography
-              variant="h5"
-              color="textSecondary"
-              component="span"
-              className={classes.textSavingsMobile}
-            >
-              ahorro*
-            </Typography>
-          </Typography>
-          <Typography
-            variant="caption"
-            color="textSecondary"
-            className={classes.captionMobile}
-          >
-            *aproximadamente en comparación al tinaco promedio de 1,100 lts en
-            el mercado mexicano
-          </Typography>
-          <Button
-            color="primary"
-            variant="contained"
-            size="large"
-            className={classes.buttonMobile}
-          >
-            Cotizar ahora
-          </Button>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

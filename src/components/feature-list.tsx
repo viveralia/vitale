@@ -11,40 +11,31 @@ const featurelist = [
   {
     content:
       "Seguimos los más altos estándares de calidad en nuestros productos.",
-    image: LanguageIcon,
+    icon: LanguageIcon,
     title: "Calidad internacional",
   },
   {
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis",
-    image: NaturePeopleIcon,
+    icon: NaturePeopleIcon,
     title: "Amigable con el ambiente",
   },
   {
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis",
-    image: BugReportIcon,
+    icon: BugReportIcon,
     title: "Evita microorganismos",
   },
   {
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis",
-    image: WbSunnyIcon,
+    icon: WbSunnyIcon,
     title: "Bloquea rayos UV",
   },
 ];
 
 const useStyles = makeStyles(theme => ({
-  colorContainer: {
-    backgroundColor: "rgba(34, 60, 83, 0.025);",
-  },
-  gridStyle: {
-    padding: "1rem 1.5rem",
-    [theme.breakpoints.up("lg")]: {
-      flexWrap: "nowrap",
-    },
-  },
-  sectionStyle: {
+  container: {
     paddingBottom: "1rem",
     paddingTop: "1rem",
     [theme.breakpoints.up("md")]: {
@@ -58,16 +49,16 @@ const FeatureList: FC = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.colorContainer}>
-      <Container component="section" className={classes.sectionStyle}>
-        <Grid container spacing={3} className={classes.gridStyle}>
+    <div>
+      <Container component="section">
+        <Grid container spacing={5} className={classes.container}>
           {featurelist.map((feature, index) => {
             return (
               <Feature
                 key={index}
                 title={feature.title}
                 content={feature.content}
-                Icon={feature.image}
+                Icon={feature.icon}
               />
             );
           })}

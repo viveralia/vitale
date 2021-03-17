@@ -8,9 +8,6 @@ interface FeatureProps {
 }
 
 const useStyles = makeStyles(() => ({
-  gridStyle: {
-    margin: "0.3rem 0",
-  },
   imageStyle: {
     height: "38px",
     width: "38px",
@@ -24,7 +21,7 @@ const useStyles = makeStyles(() => ({
 const Feature: FC<FeatureProps> = ({ content, Icon, title }) => {
   const classes = useStyles();
   return (
-    <Grid item sm={12} md={6} lg={3} className={classes.gridStyle}>
+    <Grid item xs={12} md={6} lg={3}>
       <Icon color="primary" className={classes.imageStyle} />
       <Typography variant="h6" component="h2" className={classes.titleStyle}>
         {title}
