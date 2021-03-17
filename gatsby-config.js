@@ -4,7 +4,7 @@ module.exports = {
     {
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
       resolve: `gatsby-source-filesystem`,
     },
@@ -12,7 +12,7 @@ module.exports = {
       options: {
         background_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`,
+        icon: `src/assets/images/icon.png`,
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,

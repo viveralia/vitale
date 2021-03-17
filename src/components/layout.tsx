@@ -7,7 +7,7 @@ import Header from "./header";
 const theme = createMuiTheme({
   palette: {
     background: {
-      default: "223C53",
+      default: "rgba(34, 60, 83, 0.025)",
       paper: "#FFFFFF",
     },
     primary: {
