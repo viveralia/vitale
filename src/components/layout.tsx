@@ -4,7 +4,17 @@ import React, { FC } from "react";
 
 import Header from "./header";
 
+const textSecondary = "#909DA9";
+
 const theme = createMuiTheme({
+  overrides: {
+    MuiButton: {
+      containedPrimary: {
+        color: "#FFFFFF",
+        filter: "drop-shadow(0px 4px 6px rgba(0, 175, 242, 0.2))",
+      },
+    },
+  },
   palette: {
     background: {
       default: "rgba(34, 60, 83, 0.025)",
@@ -15,11 +25,12 @@ const theme = createMuiTheme({
     },
     text: {
       primary: "#223C53",
-      secondary: "#909DA9",
+      secondary: textSecondary,
     },
   },
   typography: {
     body1: {
+      color: textSecondary,
       fontWeight: 500,
     },
     button: {
