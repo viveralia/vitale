@@ -36,7 +36,6 @@ const useStyles = makeStyles(theme => ({
     padding: "3rem 0",
   },
   title: {
-    color: "#000",
     fontSize: "1.375rem",
     paddingBottom: "3rem",
     [theme.breakpoints.up("md")]: {

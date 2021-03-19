@@ -7,26 +7,22 @@ import {
   Slider,
   withStyles,
 } from "@material-ui/core";
-import React, { FC, useState } from "react";
+import React, { ChangeEvent, FC, useState } from "react";
 
 import tinaco from "../assets/images/tinaco_vitale.png";
 
 const useStyles = makeStyles(theme => ({
   buttonMd: {
-    color: "#FFFFFF",
-    fontSize: "1.25rem",
+    fontSize: "1.125rem",
     margin: "1.2rem 0",
     maxWidth: "236px",
-    padding: "0.57rem 3rem",
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
   buttonMobile: {
-    color: "#FFFFFF",
     margin: "1.2rem",
     maxWidth: "193px",
-    padding: "0.5rem 2.5rem",
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
@@ -140,7 +136,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SavingSlider = withStyles({
-  active: {},
   rail: {
     borderRadius: 4,
     height: 8,
@@ -154,7 +149,7 @@ const SavingSlider = withStyles({
       boxShadow: "inherit",
     },
     backgroundColor: "#00AFF2",
-
+    boxShadow: "0px 5.73913px 5.73913px rgba(0, 175, 242, 0.15) !important",
     height: 24,
     marginLeft: -12,
     marginTop: -8,
@@ -173,8 +168,9 @@ const Hero: FC = () => {
   const classes = useStyles();
   const [product, setProduct] = useState(30);
 
-  const handleSlider = (e: unknown, value: number) => {
-    setProduct(value);
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  const handleSlider = (e: ChangeEvent<{}>, value: number | number[]) => {
+    setProduct(value as number);
   };
 
   const calculateSavings = (product: number) => {
@@ -196,14 +192,10 @@ const Hero: FC = () => {
             <Typography variant="h5" component="h1" className={classes.title}>
               Agua a tu alcance
             </Typography>
-            <Typography
-              variant="body1"
-              color="textSecondary"
-              className={classes.subtitleStyle}
-            >
+            <Typography className={classes.subtitleStyle}>
               Soluciones de almacenamiento de agua, al mejor precio.
             </Typography>
-            <Typography color="textSecondary" className={classes.discoverMd}>
+            <Typography className={classes.discoverMd}>
               Descubre cuánto podrías ahorrar eligiendo Vitale.
             </Typography>
             <SavingSlider
@@ -242,6 +234,7 @@ const Hero: FC = () => {
               el mercado mexicano
             </Typography>
             <Button
+              disableElevation
               color="primary"
               variant="contained"
               size="large"
@@ -260,11 +253,11 @@ const Hero: FC = () => {
           </Grid>
 
           <Grid item xs={12} container direction="column" alignItems="center">
-            <Typography className={classes.discoverMobile}>
+            <Typography color="textPrimary" className={classes.discoverMobile}>
               Descubre cuánto podrías ahorrar con Vitale.
             </Typography>
 
-            <Typography color="textSecondary" className={classes.question}>
+            <Typography className={classes.question}>
               Solo cuéntanos, ¿cuántos tinacos necesitas?
             </Typography>
             <SavingSlider
@@ -304,6 +297,7 @@ const Hero: FC = () => {
               el mercado mexicano
             </Typography>
             <Button
+              disableElevation
               color="primary"
               variant="contained"
               size="large"

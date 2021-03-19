@@ -10,13 +10,13 @@ module.exports = {
     },
     {
       options: {
-        background_color: `#663399`,
+        background_color: `#223C53`,
         display: `minimal-ui`,
         icon: `src/assets/images/icon.png`,
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        theme_color: `#663399`, // This path is relative to the root of the site.
+        theme_color: `#223C53`,
       },
       resolve: `gatsby-plugin-manifest`,
     },
@@ -41,7 +41,7 @@ module.exports = {
   ],
   siteMetadata: {
     author: ``,
-    description: ``,
-    title: ``,
+    description: `Soluciones de almacenamiento de agua, al mejor precio. Entra y descubre cuánto podrías ahorrar eligiendo Vitale.`,
+    title: `Vitale`,
   },
 };
