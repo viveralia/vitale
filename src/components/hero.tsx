@@ -196,14 +196,10 @@ const Hero: FC = () => {
             <Typography variant="h5" component="h1" className={classes.title}>
               Agua a tu alcance
             </Typography>
-            <Typography
-              variant="body1"
-              color="textSecondary"
-              className={classes.subtitleStyle}
-            >
+            <Typography className={classes.subtitleStyle}>
               Soluciones de almacenamiento de agua, al mejor precio.
             </Typography>
-            <Typography color="textSecondary" className={classes.discoverMd}>
+            <Typography className={classes.discoverMd}>
               Descubre cuánto podrías ahorrar eligiendo Vitale.
             </Typography>
             <SavingSlider
@@ -260,11 +256,11 @@ const Hero: FC = () => {
           </Grid>
 
           <Grid item xs={12} container direction="column" alignItems="center">
-            <Typography className={classes.discoverMobile}>
+            <Typography color="textPrimary" className={classes.discoverMobile}>
               Descubre cuánto podrías ahorrar con Vitale.
             </Typography>
 
-            <Typography color="textSecondary" className={classes.question}>
+            <Typography className={classes.question}>
               Solo cuéntanos, ¿cuántos tinacos necesitas?
             </Typography>
             <SavingSlider

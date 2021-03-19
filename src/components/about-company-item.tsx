@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
   },
   title: {
-    color: "#000",
     fontSize: "1.125rem",
     [theme.breakpoints.up("md")]: {
       fontSize: "2rem",
@@ -57,9 +56,7 @@ const AboutCompanyItem: FC<AboutCompanyItemProps> = ({
           <Typography variant="h6" component="h3" className={classes.title}>
             {title}
           </Typography>
-          <Typography color="textSecondary" className={classes.content}>
-            {content}
-          </Typography>
+          <Typography className={classes.content}>{content}</Typography>
         </Grid>
       </Grid>
     </Grid>

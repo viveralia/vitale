@@ -4,6 +4,8 @@ import React, { FC } from "react";
 
 import Header from "./header";
 
+const textSecondary = "#909DA9";
+
 const theme = createMuiTheme({
   palette: {
     background: {
@@ -15,11 +17,12 @@ const theme = createMuiTheme({
     },
     text: {
       primary: "#223C53",
-      secondary: "#909DA9",
+      secondary: textSecondary,
     },
   },
   typography: {
     body1: {
+      color: textSecondary,
       fontWeight: 500,
     },
     button: {

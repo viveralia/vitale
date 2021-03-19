@@ -54,12 +54,13 @@ const FeatureList: FC = () => {
         <Grid container spacing={5} className={classes.container}>
           {featurelist.map((feature, index) => {
             return (
-              <Feature
-                key={index}
-                title={feature.title}
-                content={feature.content}
-                Icon={feature.icon}
-              />
+              <Grid item xs={12} md={6} lg={3} key={index}>
+                <Feature
+                  title={feature.title}
+                  content={feature.content}
+                  Icon={feature.icon}
+                />
+              </Grid>
             );
           })}
         </Grid>

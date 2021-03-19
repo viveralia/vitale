@@ -4,6 +4,7 @@ import AboutCompanyList from "../components/about-company-list";
 import FeatureList from "../components/feature-list";
 import Hero from "../components/hero";
 import Layout from "../components/layout";
+import TestimonialList from "../components/testimonial-list";
 
 const IndexPage: FC = () => {
   return (
@@ -11,6 +12,7 @@ const IndexPage: FC = () => {
       <Hero />
       <FeatureList />
       <AboutCompanyList />
+      <TestimonialList />
     </Layout>
   );
 };
