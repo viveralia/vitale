@@ -2,6 +2,7 @@ import React, { FC } from "react";
 
 import AboutCompanyList from "../components/about-company-list";
 import FeatureList from "../components/feature-list";
+import FinalCallToAction from "../components/final-call-to-action";
 import Hero from "../components/hero";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -15,6 +16,7 @@ const IndexPage: FC = () => {
       <FeatureList />
       <AboutCompanyList />
       <TestimonialList />
+      <FinalCallToAction />
     </Layout>
   );
 };

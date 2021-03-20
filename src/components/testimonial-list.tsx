@@ -6,10 +6,14 @@ import Testimonial from "./testimonial";
 
 const useStyles = makeStyles(theme => ({
   section: {
-    padding: "2rem 0",
+    paddingBottom: "2rem",
+    paddingTop: "2rem",
+    [theme.breakpoints.up("md")]: {
+      paddingBottom: "3.5rem",
+      paddingTop: "3.5rem",
+    },
   },
   title: {
-    fontSize: "1.375",
     paddingBottom: "2rem",
     textAlign: "center",
     [theme.breakpoints.up("md")]: {
@@ -23,10 +27,10 @@ const TestimonialList: FC = () => {
   return (
     <section className={classes.section}>
       <Container>
-        <Typography variant="h6" component="h2" className={classes.title}>
+        <Typography variant="h2" className={classes.title}>
           Nuestros clientes opinan
         </Typography>
-        <Grid container spacing={6}>
+        <Grid container spacing={4}>
           {testimonials.map((testimonial, index) => {
             return (
               <Grid item xs={12} md={4} key={index}>

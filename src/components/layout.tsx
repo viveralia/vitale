@@ -12,6 +12,8 @@ const theme = createMuiTheme({
       containedPrimary: {
         color: "#FFFFFF",
         filter: "drop-shadow(0px 4px 6px rgba(0, 175, 242, 0.2))",
+        /*  paddingLeft: "20rem",
+        paddingRight: "20rem", */
       },
     },
   },
@@ -43,15 +45,22 @@ const theme = createMuiTheme({
     },
     fontFamily: "Lato",
     h1: {
+      fontSize: "1.9rem",
       fontWeight: 700,
+      lineHeight: 1.5,
     },
     h2: {
+      fontSize: "1.4rem",
       fontWeight: 700,
+      lineHeight: 1.4,
     },
     h3: {
+      fontSize: "1.2rem",
       fontWeight: 700,
+      lineHeight: 1.3,
     },
     h4: {
+      fontSize: "1.125rem",
       fontWeight: 700,
     },
     h5: {
