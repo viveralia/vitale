@@ -28,7 +28,6 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
   },
   name: {
-    fontSize: "1.125rem",
     textAlign: "center",
   },
   triangle: {
@@ -55,7 +54,7 @@ const Testimonial: FC<TestimonialProps> = ({
       </div>
       <div className={classes.triangle}></div>
       <Avatar alt="image" src={image} className={classes.avatar} />
-      <Typography variant="h6" component="h3" className={classes.name}>
+      <Typography variant="h4" className={classes.name}>
         {name}
       </Typography>
       <Typography className={classes.designation}>{designation}</Typography>

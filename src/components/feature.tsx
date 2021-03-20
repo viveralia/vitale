@@ -7,13 +7,15 @@ interface FeatureProps {
   title: string;
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   imageStyle: {
     height: "38px",
     width: "38px",
   },
   titleStyle: {
-    fontSize: "0.0625 rem",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1.4rem",
+    },
   },
 }));
 
@@ -22,7 +24,7 @@ const Feature: FC<FeatureProps> = ({ content, Icon, title }) => {
   return (
     <>
       <Icon color="primary" className={classes.imageStyle} />
-      <Typography variant="h6" component="h2" className={classes.titleStyle}>
+      <Typography variant="h3" className={classes.titleStyle}>
         {title}
       </Typography>
       <Typography>{content}</Typography>

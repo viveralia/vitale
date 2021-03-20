@@ -17,16 +17,15 @@ interface AboutCompanyItemProps {
 const useStyles = makeStyles(theme => ({
   content: {
     [theme.breakpoints.up("md")]: {
-      fontSize: "1.5rem",
+      fontSize: "1.2rem",
     },
   },
   imageStyle: {
     width: "100%",
   },
   title: {
-    fontSize: "1.125rem",
     [theme.breakpoints.up("md")]: {
-      fontSize: "2rem",
+      fontSize: "1.5rem",
     },
   },
 }));
@@ -46,14 +45,14 @@ const AboutCompanyItem: FC<AboutCompanyItemProps> = ({
       <Grid
         container
         alignItems="center"
-        spacing={isMdOrAbove ? 6 : 0}
+        spacing={isMdOrAbove ? 6 : 1}
         direction={number % 2 === 0 ? "row-reverse" : "row"}
       >
         <Grid item xs={12} md={6}>
           <img src={image} alt={alt} className={classes.imageStyle} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Typography variant="h6" component="h3" className={classes.title}>
+          <Typography variant="h3" className={classes.title}>
             {title}
           </Typography>
           <Typography className={classes.content}>{content}</Typography>

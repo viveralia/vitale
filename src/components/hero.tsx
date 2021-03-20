@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   buttonMobile: {
-    margin: "1.2rem",
+    marginTop: "1.2rem",
     maxWidth: "193px",
     [theme.breakpoints.up("md")]: {
       display: "none",
@@ -41,18 +41,8 @@ const useStyles = makeStyles(theme => ({
       display: "none",
     },
   },
-  colorContainer: {
-    backgroundColor: theme.palette.background.paper,
-  },
-  containerStyle: {
-    textAlign: "center",
-    [theme.breakpoints.up("md")]: {
-      justifyContent: "left",
-      textAlign: "left",
-    },
-  },
   discoverMd: {
-    fontSize: "1.5rem",
+    fontSize: "1.2rem",
     fontWeight: 500,
     [theme.breakpoints.down("sm")]: {
       display: "none",
@@ -88,6 +78,18 @@ const useStyles = makeStyles(theme => ({
       display: "none",
     },
   },
+  section: {
+    backgroundColor: theme.palette.background.paper,
+    paddingBottom: "2rem",
+    paddingTop: "2rem",
+    textAlign: "center",
+    [theme.breakpoints.up("md")]: {
+      justifyContent: "left",
+      paddingBottom: "3.5rem",
+      paddingTop: "3.5rem",
+      textAlign: "left",
+    },
+  },
   sliderMd: {
     maxWidth: "500px",
     padding: "2rem 0",
@@ -106,7 +108,7 @@ const useStyles = makeStyles(theme => ({
     margin: "0 auto",
     maxWidth: "280px",
     [theme.breakpoints.up("md")]: {
-      fontSize: "1.5rem",
+      fontSize: "1.2rem",
       margin: 0,
       maxWidth: "600px",
       textAlign: "left",
@@ -126,9 +128,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
   title: {
-    fontSize: "1.875rem",
     [theme.breakpoints.up("md")]: {
-      fontSize: "3.125rem",
+      fontSize: "3rem",
       paddingBottom: "1rem",
       textAlign: "left",
     },
@@ -180,16 +181,11 @@ const Hero: FC = () => {
   };
 
   return (
-    <div className={classes.colorContainer}>
-      <Container component="section">
-        <Grid
-          container
-          justify="center"
-          spacing={3}
-          className={classes.containerStyle}
-        >
+    <section className={classes.section}>
+      <Container>
+        <Grid container justify="center">
           <Grid item xs={12} md={7} container direction="column">
-            <Typography variant="h5" component="h1" className={classes.title}>
+            <Typography variant="h1" className={classes.title}>
               Agua a tu alcance
             </Typography>
             <Typography className={classes.subtitleStyle}>
@@ -308,7 +304,7 @@ const Hero: FC = () => {
           </Grid>
         </Grid>
       </Container>
-    </div>
+    </section>
   );
 };
 
