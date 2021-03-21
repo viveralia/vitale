@@ -2,6 +2,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import React, { FC } from "react";
 
+import Footer from "./footer";
 import Header from "./header";
 
 const textSecondary = "#909DA9";
@@ -78,6 +79,7 @@ const Layout: FC = ({ children }) => {
       <CssBaseline />
       <Header />
       {children}
+      <Footer />
     </ThemeProvider>
   );
 };

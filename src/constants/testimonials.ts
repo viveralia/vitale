@@ -2,6 +2,7 @@ import profesional from "../assets/images/profesional.jpg";
 
 const testimonials = [
   {
+    alt: "description image",
     content:
       "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.”",
     designation: "CEO at ABC Corporation",
@@ -9,6 +10,7 @@ const testimonials = [
     name: "Marbella O.",
   },
   {
+    alt: "description image",
     content:
       "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.”",
     designation: "CEO at ABC Corporation",
@@ -16,6 +18,7 @@ const testimonials = [
     name: "Marbella O.",
   },
   {
+    alt: "description image",
     content:
       "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.”",
     designation: "CEO at ABC Corporation",

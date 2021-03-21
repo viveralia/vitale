@@ -2,6 +2,7 @@ import { Avatar, makeStyles, Typography } from "@material-ui/core";
 import React, { FC } from "react";
 
 interface TestimonialProps {
+  alt: string;
   content: string;
   designation: string;
   image: string;
@@ -45,6 +46,7 @@ const Testimonial: FC<TestimonialProps> = ({
   designation,
   name,
   image,
+  alt,
 }) => {
   const classes = useStyles();
   return (
@@ -53,7 +55,7 @@ const Testimonial: FC<TestimonialProps> = ({
         <Typography className={classes.content}>{content}</Typography>
       </div>
       <div className={classes.triangle}></div>
-      <Avatar alt="image" src={image} className={classes.avatar} />
+      <Avatar alt={alt} src={image} className={classes.avatar} />
       <Typography variant="h4" className={classes.name}>
         {name}
       </Typography>
