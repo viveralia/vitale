@@ -8,8 +8,10 @@ import {
   useTheme,
 } from "@material-ui/core";
 import React, { FC } from "react";
-import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+
+import footerNavigation from "../constants/footer-navigation";
+import socialNetworks from "../constants/social-networks";
+import SocialNetwork from "./social-network";
 
 const useStyles = makeStyles(theme => ({
   copyRightGrid: {
@@ -38,11 +40,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("md")]: {
       textAlign: "right",
     },
-  },
-  icon: {
-    color: theme.palette.background.paper,
-    fontSize: "1.5rem",
-    marginRight: "1rem",
   },
   linkItem: {
     [theme.breakpoints.up("md")]: {
@@ -75,20 +72,15 @@ const Footer: FC = () => {
       <Container>
         <Grid container spacing={2} alignItems="center">
           <Grid item xs={12} md={6}>
-            <Link
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebookF className={classes.icon} />
-            </Link>
-            <Link
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram className={classes.icon} />
-            </Link>
+            {socialNetworks.map((network, index) => {
+              return (
+                <SocialNetwork
+                  Icon={network.icon}
+                  path={network.path}
+                  key={index}
+                />
+              );
+            })}
           </Grid>
           <Grid
             container
@@ -98,39 +90,21 @@ const Footer: FC = () => {
             spacing={isMdOrAbove ? 0 : 2}
             className={classes.linksContainer}
           >
-            <Grid item xs={6} className={classes.linkItem}>
-              <Link
-                underline="none"
-                href="https://puriplas.com/"
-                color="textSecondary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Puriplas
-              </Link>
-            </Grid>
-            <Grid item xs={6} className={classes.linkItem}>
-              <Link
-                underline="none"
-                href="https://puriplas.com/#contacto"
-                color="textSecondary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Contacto
-              </Link>
-            </Grid>
-            <Grid item xs={6} className={classes.linkItem}>
-              <Link
-                underline="none"
-                href="https://puriplas.com/privacidad"
-                color="textSecondary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Política de privacidad
-              </Link>
-            </Grid>
+            {footerNavigation.map((link, index) => {
+              return (
+                <Grid item xs={6} className={classes.linkItem} key={index}>
+                  <Link
+                    underline="none"
+                    href={link.path}
+                    color="textSecondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.name}
+                  </Link>
+                </Grid>
+              );
+            })}
           </Grid>
         </Grid>
         <Grid
