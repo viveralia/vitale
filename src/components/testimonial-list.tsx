@@ -39,6 +39,7 @@ const TestimonialList: FC = () => {
                   designation={testimonial.designation}
                   name={testimonial.name}
                   image={testimonial.image}
+                  alt={testimonial.alt}
                 />
               </Grid>
             );
