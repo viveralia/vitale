@@ -7,9 +7,15 @@ import {
   Slider,
   withStyles,
 } from "@material-ui/core";
-import React, { ChangeEvent, FC, useState } from "react";
+import React, { ChangeEvent, FC } from "react";
 
 import tinaco from "../assets/images/tinaco_vitale.png";
+
+export interface HeroProps {
+  amount: number;
+  setAmount: React.Dispatch<React.SetStateAction<number>>;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 const useStyles = makeStyles(theme => ({
   buttonMd: {
@@ -165,19 +171,22 @@ const SavingSlider = withStyles({
   },
 })(Slider);
 
-const Hero: FC = () => {
+const Hero: FC<HeroProps> = ({ setOpen, setAmount, amount }) => {
   const classes = useStyles();
-  const [product, setProduct] = useState(30);
 
   // eslint-disable-next-line @typescript-eslint/ban-types
   const handleSlider = (e: ChangeEvent<{}>, value: number | number[]) => {
-    setProduct(value as number);
+    setAmount(value as number);
   };
 
-  const calculateSavings = (product: number) => {
-    const saving = product * 200;
+  const calculateSavings = (amount: number) => {
+    const saving = amount * 200;
     const total = saving.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
     return total;
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
   };
 
   return (
@@ -196,13 +205,13 @@ const Hero: FC = () => {
             </Typography>
             <SavingSlider
               className={classes.sliderMd}
-              value={product}
+              value={amount}
               onChange={handleSlider}
               max={1000}
               min={30}
             />
             <Typography variant="h5" className={classes.numberSavingsMd}>
-              {product}{" "}
+              {amount}{" "}
               <Typography
                 variant="h5"
                 color="textSecondary"
@@ -211,7 +220,7 @@ const Hero: FC = () => {
               >
                 tinacos ={" "}
               </Typography>
-              ${calculateSavings(product)}{" "}
+              ${calculateSavings(amount)}{" "}
               <Typography
                 variant="h5"
                 color="textSecondary"
@@ -235,6 +244,7 @@ const Hero: FC = () => {
               variant="contained"
               size="large"
               className={classes.buttonMd}
+              onClick={handleOpen}
             >
               Cotizar ahora
             </Button>
@@ -258,14 +268,14 @@ const Hero: FC = () => {
             </Typography>
             <SavingSlider
               className={classes.sliderMobile}
-              value={product}
+              value={amount}
               onChange={handleSlider}
               min={30}
               max={1000}
             />
 
             <Typography variant="h5" className={classes.numberSavingsMobile}>
-              {product}{" "}
+              {amount}{" "}
               <Typography
                 variant="h5"
                 color="textSecondary"
@@ -274,7 +284,7 @@ const Hero: FC = () => {
               >
                 tinacos ={" "}
               </Typography>
-              ${calculateSavings(product)}{" "}
+              ${calculateSavings(amount)}{" "}
               <Typography
                 variant="h5"
                 color="textSecondary"
@@ -298,6 +308,7 @@ const Hero: FC = () => {
               variant="contained"
               size="large"
               className={classes.buttonMobile}
+              onClick={handleOpen}
             >
               Cotizar ahora
             </Button>
