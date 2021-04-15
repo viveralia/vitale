@@ -9,19 +9,50 @@ import QuotationRequest from "../components/quotation-request";
 import SEO from "../components/seo";
 import TestimonialList from "../components/testimonial-list";
 
+export interface Quotation {
+  capacity: string;
+  delivery: string;
+  email: string;
+  name: string;
+  phone: string;
+  quantity: number;
+}
+
+export const initialQuotation: Quotation = {
+  capacity: "1,100 lts",
+  delivery: "",
+  email: "",
+  name: "",
+  phone: "",
+  quantity: 35,
+};
+
 const IndexPage: FC = () => {
   const [open, setOpen] = useState(false);
-  const [amount, setAmount] = useState(30);
+  const [quotation, setQuotation] = useState(initialQuotation);
+
+  const changeQuantity = (newQuantity: number) => {
+    setQuotation({ ...quotation, quantity: newQuantity });
+  };
 
   return (
     <Layout>
       <SEO title="Agua a tu alcance" />
-      <Hero setOpen={setOpen} setAmount={setAmount} amount={amount} />
+      <Hero
+        setOpen={setOpen}
+        changeQuantity={changeQuantity}
+        quantity={quotation.quantity}
+      />
       <FeatureList />
       <AboutCompanyList />
       <TestimonialList />
       <FinalCallToAction setOpen={setOpen} />
-      <QuotationRequest open={open} setOpen={setOpen} amount={amount} />
+      <QuotationRequest
+        open={open}
+        setOpen={setOpen}
+        setQuotation={setQuotation}
+        quotation={quotation}
+      />
     </Layout>
   );
 };
