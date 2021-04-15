@@ -1,6 +1,10 @@
 import { Button, Container, makeStyles, Typography } from "@material-ui/core";
 import React, { FC } from "react";
 
+export interface FinalCallToActionProps {
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 const useStyles = makeStyles(theme => ({
   button: {
     display: "block",
@@ -31,8 +35,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const FinalCallToAction: FC = () => {
+const FinalCallToAction: FC<FinalCallToActionProps> = ({ setOpen }) => {
   const classes = useStyles();
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <div className={classes.section}>
       <Container>
@@ -49,6 +56,7 @@ const FinalCallToAction: FC = () => {
           variant="contained"
           size="large"
           className={classes.button}
+          onClick={handleOpen}
         >
           Cotizar ahora
         </Button>
